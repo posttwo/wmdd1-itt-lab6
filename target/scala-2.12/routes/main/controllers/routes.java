@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/webapps/helloworld/conf/routes
-// @DATE:Wed Oct 25 11:55:46 IST 2017
+// @DATE:Wed Oct 25 12:13:19 IST 2017
 
 package controllers;
 

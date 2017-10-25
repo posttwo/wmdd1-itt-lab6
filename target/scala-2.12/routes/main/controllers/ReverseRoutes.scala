@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/webapps/helloworld/conf/routes
-// @DATE:Wed Oct 25 11:55:46 IST 2017
+// @DATE:Wed Oct 25 12:13:19 IST 2017
 
 import play.api.mvc.Call
 
@@ -18,6 +18,18 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:12
+    def about(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "about")
+    }
+  
+    // @LINE:13
+    def products(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "products")
+    }
   
     // @LINE:6
     def index(): Call = {

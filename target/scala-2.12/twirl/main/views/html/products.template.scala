@@ -22,7 +22,7 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object products extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
   def apply():play.twirl.api.HtmlFormat.Appendable = {
@@ -47,9 +47,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
     </div>
     <!-- List containing nav links -->
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home</a></li>
+      <li class=""><a href="/">Home</a></li>
       <li><a href="/about">About Us</a></li>
-      <li class=""><a href="/products">About Us</a></li>      
+      <li class="active"><a href="/products">About Us</a></li>
     </ul>
   </nav>
 
@@ -90,9 +90,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
               /*
                   -- GENERATED --
                   DATE: Wed Oct 25 12:13:19 IST 2017
-                  SOURCE: /home/wdd/webapps/helloworld/app/views/index.scala.html
-                  HASH: 9e5c6584b010e06afe5a7eb92a3c79e53d052654
-                  MATRIX: 1030->0
+                  SOURCE: /home/wdd/webapps/helloworld/app/views/products.scala.html
+                  HASH: 58ce49407ce7a59a41610a327c77beaea2d548cb
+                  MATRIX: 1033->0
                   LINES: 33->1
                   -- GENERATED --
               */

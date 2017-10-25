@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/webapps/helloworld/conf/routes
-// @DATE:Wed Oct 25 11:55:46 IST 2017
+// @DATE:Wed Oct 25 12:13:19 IST 2017
 
 package router
 
@@ -42,6 +42,8 @@ class Routes(
   def documentation = List(
     ("""GET""", this.prefix, """controllers.HomeController.index"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.versioned(path:String = "/public", file:Asset)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """about""", """controllers.HomeController.about"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """products""", """controllers.HomeController.products"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
     case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
@@ -85,6 +87,42 @@ class Routes(
     )
   )
 
+  // @LINE:12
+  private[this] lazy val controllers_HomeController_about2_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("about")))
+  )
+  private[this] lazy val controllers_HomeController_about2_invoker = createInvoker(
+    HomeController_0.about,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "about",
+      Nil,
+      "GET",
+      this.prefix + """about""",
+      """ Lab Exercise""",
+      Seq()
+    )
+  )
+
+  // @LINE:13
+  private[this] lazy val controllers_HomeController_products3_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("products")))
+  )
+  private[this] lazy val controllers_HomeController_products3_invoker = createInvoker(
+    HomeController_0.products,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "products",
+      Nil,
+      "GET",
+      this.prefix + """products""",
+      """""",
+      Seq()
+    )
+  )
+
 
   def routes: PartialFunction[RequestHeader, Handler] = {
   
@@ -98,6 +136,18 @@ class Routes(
     case controllers_Assets_versioned1_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
         controllers_Assets_versioned1_invoker.call(Assets_1.versioned(path, file))
+      }
+  
+    // @LINE:12
+    case controllers_HomeController_about2_route(params@_) =>
+      call { 
+        controllers_HomeController_about2_invoker.call(HomeController_0.about)
+      }
+  
+    // @LINE:13
+    case controllers_HomeController_products3_route(params@_) =>
+      call { 
+        controllers_HomeController_products3_invoker.call(HomeController_0.products)
       }
   }
 }
