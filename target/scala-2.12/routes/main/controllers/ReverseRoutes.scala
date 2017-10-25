@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/wdd/webapps/helloworld/conf/routes
-// @DATE:Wed Oct 25 12:13:19 IST 2017
+// @DATE:Wed Oct 25 12:22:33 IST 2017
 
 import play.api.mvc.Call
 
@@ -32,9 +32,9 @@ package controllers {
     }
   
     // @LINE:6
-    def index(): Call = {
+    def index(name:String = "visitor"): Call = {
       
-      Call("GET", _prefix)
+      Call("GET", _prefix + play.core.routing.queryString(List(if(name == "visitor") None else Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("name", name)))))
     }
   
   }

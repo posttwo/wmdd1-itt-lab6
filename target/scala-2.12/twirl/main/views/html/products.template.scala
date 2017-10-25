@@ -49,7 +49,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
     <ul class="nav navbar-nav">
       <li class=""><a href="/">Home</a></li>
       <li><a href="/about">About Us</a></li>
-      <li class="active"><a href="/products">About Us</a></li>
+      <li class="active"><a href="/products">Products</a></li>
     </ul>
   </nav>
 
@@ -89,9 +89,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-                  DATE: Wed Oct 25 12:13:19 IST 2017
+                  DATE: Wed Oct 25 12:16:17 IST 2017
                   SOURCE: /home/wdd/webapps/helloworld/app/views/products.scala.html
-                  HASH: 58ce49407ce7a59a41610a327c77beaea2d548cb
+                  HASH: 3d50cdfe4924e3273e5db9cf030651f97326aa15
                   MATRIX: 1033->0
                   LINES: 33->1
                   -- GENERATED --

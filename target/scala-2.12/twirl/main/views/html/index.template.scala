@@ -22,15 +22,16 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object index extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template2[String,String,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(message: String, name: String):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
+Seq[Any](format.raw/*1.33*/("""
+"""),format.raw/*2.1*/("""<!DOCTYPE html>
 <html>
 
 <head>
@@ -49,7 +50,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
     <ul class="nav navbar-nav">
       <li class="active"><a href="/">Home</a></li>
       <li><a href="/about">About Us</a></li>
-      <li class=""><a href="/products">About Us</a></li>      
+      <li class=""><a href="/products">Products</a></li>      
     </ul>
   </nav>
 
@@ -62,8 +63,8 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
       </div>
       <div class="col-sm-9">
         <h4 class="well">
-          Welcome to the Home Page
-        </h4>
+          """),_display_(/*34.12*/message),format.raw/*34.19*/(""" """),format.raw/*34.20*/("""- """),_display_(/*34.23*/name),format.raw/*34.27*/("""
+        """),format.raw/*35.9*/("""</h4>
       </div>
   </div>
     <footer class="container-fluid text-center">
@@ -78,9 +79,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(message:String,name:String): play.twirl.api.HtmlFormat.Appendable = apply(message,name)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((String,String) => play.twirl.api.HtmlFormat.Appendable) = (message,name) => apply(message,name)
 
   def ref: this.type = this
 
@@ -89,11 +90,11 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-                  DATE: Wed Oct 25 12:13:19 IST 2017
+                  DATE: Wed Oct 25 12:23:41 IST 2017
                   SOURCE: /home/wdd/webapps/helloworld/app/views/index.scala.html
-                  HASH: 9e5c6584b010e06afe5a7eb92a3c79e53d052654
-                  MATRIX: 1030->0
-                  LINES: 33->1
+                  HASH: cc710378b4ed3f57fc32926136b23857508d2a70
+                  MATRIX: 955->1|1081->32|1108->33|1970->868|1998->875|2027->876|2057->879|2082->883|2118->892
+                  LINES: 28->1|33->1|34->2|66->34|66->34|66->34|66->34|66->34|67->35
                   -- GENERATED --
               */
           

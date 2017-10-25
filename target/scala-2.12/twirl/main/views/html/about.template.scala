@@ -22,15 +22,16 @@ import play.mvc.Http.Context.Implicit._
 import play.data._
 import play.core.j.PlayFormsMagicForJava._
 
-object about extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template0[play.twirl.api.HtmlFormat.Appendable] {
+object about extends _root_.play.twirl.api.BaseScalaTemplate[play.twirl.api.HtmlFormat.Appendable,_root_.play.twirl.api.Format[play.twirl.api.HtmlFormat.Appendable]](play.twirl.api.HtmlFormat) with _root_.play.twirl.api.Template1[String,play.twirl.api.HtmlFormat.Appendable] {
 
   /**/
-  def apply():play.twirl.api.HtmlFormat.Appendable = {
+  def apply/*1.2*/(message: String):play.twirl.api.HtmlFormat.Appendable = {
     _display_ {
       {
 
 
-Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
+Seq[Any](format.raw/*1.19*/("""
+"""),format.raw/*2.1*/("""<!DOCTYPE html>
 <html>
 
 <head>
@@ -49,7 +50,7 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
     <ul class="nav navbar-nav">
       <li class=""><a href="/">Home</a></li>
       <li class="active"><a href="/about">About Us</a></li>
-      <li class=""><a href="/products">About Us</a></li>      
+      <li class=""><a href="/products">Products</a></li>      
     </ul>
   </nav>
 
@@ -62,8 +63,8 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
       </div>
       <div class="col-sm-9">
         <h4 class="well">
-          Welcome to the Home Page
-        </h4>
+          """),_display_(/*34.12*/message),format.raw/*34.19*/("""
+        """),format.raw/*35.9*/("""</h4>
       </div>
   </div>
     <footer class="container-fluid text-center">
@@ -78,9 +79,9 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
     }
   }
 
-  def render(): play.twirl.api.HtmlFormat.Appendable = apply()
+  def render(message:String): play.twirl.api.HtmlFormat.Appendable = apply(message)
 
-  def f:(() => play.twirl.api.HtmlFormat.Appendable) = () => apply()
+  def f:((String) => play.twirl.api.HtmlFormat.Appendable) = (message) => apply(message)
 
   def ref: this.type = this
 
@@ -89,11 +90,11 @@ Seq[Any](format.raw/*1.1*/("""<!DOCTYPE html>
 
               /*
                   -- GENERATED --
-                  DATE: Wed Oct 25 12:13:19 IST 2017
+                  DATE: Wed Oct 25 12:17:03 IST 2017
                   SOURCE: /home/wdd/webapps/helloworld/app/views/about.scala.html
-                  HASH: 50d1e817fd989437dc88259893059f93954823dd
-                  MATRIX: 1030->0
-                  LINES: 33->1
+                  HASH: 0c822846c7c1dbbab01830e26db48de5a1fa7841
+                  MATRIX: 948->1|1060->18|1087->19|1958->863|1986->870|2022->879
+                  LINES: 28->1|33->1|34->2|66->34|66->34|67->35
                   -- GENERATED --
               */
           
